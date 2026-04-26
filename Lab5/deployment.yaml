@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: flask-metrics-app:4.0
+          image: flask-metrics-app:8.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
@@ -35,3 +35,7 @@ spec:
                 secretKeyRef:
                   name: flask-secret
                   key: API_KEY
+            - name: OTEL_SERVICE_NAME
+              value: "flask-metrics-app"
+            - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
+              value: "http://tempo:4318/v1/traces"
