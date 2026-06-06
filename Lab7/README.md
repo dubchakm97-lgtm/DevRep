@@ -143,6 +143,19 @@ docs/screenshots/lab7/
 
 ---
 
+## Конфигурации observability
+
+В репозитории добавлены конфигурации платформенного стека:
+
+- `observability/prometheus/prometheus.yaml` — scrape config для Flask-приложения
+- `observability/tempo/tempo.yaml` — конфигурация Tempo и OTLP receivers
+- `observability/grafana/provisioning/datasources/datasources.yaml` — datasources Prometheus и Tempo
+- `observability/grafana/provisioning/dashboards/dashboard-provider.yaml` — provider для dashboard
+- `observability/grafana/dashboards/flask-dashboard.json` — dashboard с PromQL-панелями
+- `k8s/servicemonitor.yaml` — ServiceMonitor для Kubernetes scraping
+
+---
+
 ## Итог
 
 В лабораторной реализована полноценная система наблюдаемости:
